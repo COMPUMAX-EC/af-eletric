@@ -1,42 +1,57 @@
-import { ArrowUpRight, Cable, Cpu, Globe2, Menu, Settings2, Ship, Zap } from 'lucide-react'
+import { ArrowUpRight, Boxes, Cable, CheckCircle2, Cpu, FileSignature, Globe2, Headset, Menu, ShieldCheck, Zap } from 'lucide-react'
 
-const services = [
-  { icon: Ship, title: 'Sistemas navales', text: 'Adquisición de datos, automatización y soporte eléctrico para operación marítima.' },
-  { icon: Settings2, title: 'Mantenimiento industrial', text: 'Diagnóstico, puesta en marcha y mantenimiento de sistemas críticos.' },
-  { icon: Cpu, title: 'Control y automatización', text: 'Integración de PLC, SCADA e instrumentación para procesos más confiables.' },
+const highlights = [
+  { icon: Boxes, title: 'Soluciones integrales', text: 'Equipamiento para diferentes necesidades industriales y corporativas.' },
+  { icon: Cable, title: 'Amplio portafolio', text: 'Suministro de productos eléctricos, industriales y tecnológicos.' },
+  { icon: Headset, title: 'Atención profesional', text: 'Acompañamiento técnico constante durante todo el proceso.' },
+  { icon: ShieldCheck, title: 'Calidad y confiabilidad', text: 'Productos de alto nivel para aplicaciones técnicas exigentes.' },
+]
+
+const products = [
+  { title: 'Equipos eléctricos', text: 'Motores, transformadores, cables, conmutadores y componentes para instalaciones confiables.', icon: Zap },
+  { title: 'Equipos industriales', text: 'Bombas, automatización y soluciones para el funcionamiento continuo de su operación.', icon: Cpu },
+  { title: 'Tecnología empresarial', text: 'Computadores, periféricos y herramientas para potenciar sus procesos.', icon: Boxes },
 ]
 
 export default function Page() {
   return (
     <main>
-      <section className="hero-section">
-        <nav className="site-nav" aria-label="Navegación principal">
-          <a href="#inicio" className="brand-mark"><span>A&F</span> ELECTRIC</a>
-          <div className="nav-links"><a href="#servicios">Servicios</a><a href="#experiencia">Experiencia</a><a href="#contacto">Contacto</a></div>
-          <a href="#contacto" className="nav-cta">Hablemos <ArrowUpRight size={16} /></a>
-          <button className="menu-button" aria-label="Abrir menú"><Menu size={22} /></button>
-        </nav>
-        <div className="hero-content" id="inicio">
-          <p className="eyebrow"><span className="eyebrow-line" /> Ingeniería que mantiene el rumbo</p>
-          <h1>La energía de<br /><em>lo esencial.</em></h1>
-          <p className="hero-copy">Sistemas eléctricos y adquisición de datos para buques e industria. Ingeniería precisa para operaciones que no pueden detenerse.</p>
-          <a href="#servicios" className="primary-button">Conozca nuestras soluciones <ArrowUpRight size={17} /></a>
+      <header className="site-header">
+        <div className="header-inner">
+          <a href="#inicio" className="logo-lockup" aria-label="A&F Electric inicio">
+            <span className="logo-badge"><span className="logo-af">AF</span><span className="logo-bolt">↯</span></span>
+            <span className="logo-text"><strong>A&F</strong> ELECTRIC<small>SAS · Industrial & Tech</small></span>
+          </a>
+          <nav className="main-nav" aria-label="Navegación principal">
+            <a href="#inicio">Inicio</a><a href="#nosotros">Nosotros</a><a href="#productos">Productos</a><a href="#soluciones">Soluciones</a><a href="#contacto">Contacto</a>
+          </nav>
+          <a className="header-cta" href="#cotizacion"><FileSignature size={15} /> Solicitar cotización</a>
+          <button className="mobile-menu" aria-label="Abrir menú"><Menu size={22} /></button>
         </div>
-        <div className="hero-footer"><span>01 — 03</span><span className="hero-scroll">Desplazar para explorar <span className="scroll-line" /></span></div>
+      </header>
+
+      <section className="reference-hero" id="inicio">
+        <div className="hero-image" aria-hidden="true" />
+        <div className="hero-overlay" />
+        <div className="content-shell hero-content">
+          <div className="hero-badge"><span /> Proveedor industrial y tecnológico</div>
+          <h1>Energía que<br /><em>impulsa tus proyectos.</em></h1>
+          <p>Soluciones eléctricas, industriales y tecnológicas para empresas que buscan rendimiento, confiabilidad y eficiencia.</p>
+          <div className="hero-actions"><a className="yellow-button" href="#productos"><Boxes size={17} /> Ver nuestros productos</a><a className="light-button" href="#cotizacion"><FileSignature size={17} /> Solicitar cotización</a></div>
+          <div className="hero-note"><Zap size={17} /> Equipamiento eléctrico · Soluciones industriales · Tecnología</div>
+        </div>
       </section>
 
-      <section className="intro-section" id="experiencia">
-        <div className="section-label">A&F / 01</div>
-        <div className="intro-content"><p className="eyebrow dark"><span className="eyebrow-line" /> Ingeniería eléctrica especializada</p><h2>Conectamos la<br /><strong>inteligencia</strong> con la operación.</h2><p className="body-copy">Desde el mar hasta las plantas industriales, ayudamos a nuestros clientes a ver, entender y controlar sus sistemas eléctricos. Una alianza técnica para cada desafío.</p><div className="regions"><Globe2 size={18} /><span>Ecuador</span><span>Perú</span><span>Colombia</span></div></div>
-      </section>
+      <section className="highlight-wrap"><div className="highlight-grid">{highlights.map(({ icon: Icon, title, text }) => <article className="highlight-card" key={title}><div className="highlight-icon"><Icon size={21} /></div><h3>{title}</h3><p>{text}</p></article>)}</div></section>
 
-      <section className="services-section" id="servicios"><div className="section-heading"><div><p className="eyebrow dark"><span className="eyebrow-line" /> Lo que hacemos</p><h2>Experiencia que<br /><strong>se siente.</strong></h2></div><p className="heading-note">Soluciones diseñadas para entornos exigentes, donde la precisión y la continuidad son parte del resultado.</p></div><div className="service-grid">{services.map(({ icon: Icon, title, text }, index) => <article className="service-card" key={title}><span className="service-number">0{index + 1}</span><Icon className="service-icon" size={28} strokeWidth={1.4} /><h3>{title}</h3><p>{text}</p><a href="#contacto" aria-label={`Conocer más sobre ${title}`}><ArrowUpRight size={18} /></a></article>)}</div></section>
+      <section className="about-section content-shell" id="nosotros"><div className="about-image"><div className="image-caption"><small>A&F ELECTRIC SAS</small><strong>Comercialización y suministro B2B al por mayor.</strong></div></div><div className="about-copy"><div className="section-kicker">Sobre nosotros</div><h2>Tecnología y soluciones<br /><em>para la industria.</em></h2><p>A&F ELECTRIC SAS orienta sus actividades a la comercialización de equipos eléctricos, industriales y tecnológicos, ofreciendo a sus clientes alternativas para el desarrollo y equipamiento de sus proyectos.</p><div className="value-list"><div><CheckCircle2 size={18} /><span><strong>Confiabilidad</strong>Compromiso firme con el cumplimiento técnico y la entrega puntual.</span></div><div><CheckCircle2 size={18} /><span><strong>Experiencia</strong>Conocimiento para acompañar cada decisión de compra.</span></div></div></div></section>
 
-      <section className="partners-section"><p className="eyebrow dark"><span className="eyebrow-line" /> Tecnología que conocemos</p><div className="partner-row"><span>SIEMENS</span><span>HONEYWELL</span><span>GE <small>fanuc</small></span><span className="partner-caption">Integradores y especialistas certificados<br />para sistemas industriales.</span></div></section>
+      <section className="products-section" id="productos"><div className="content-shell"><div className="section-kicker">Nuestro portafolio</div><div className="products-heading"><h2>Todo lo que su<br /><em>operación necesita.</em></h2><p>Representamos y suministramos soluciones de marcas reconocidas para ambientes industriales y corporativos.</p></div><div className="product-grid">{products.map(({ title, text, icon: Icon }) => <article className="product-card" key={title}><Icon size={30} /><h3>{title}</h3><p>{text}</p><a href="#cotizacion" aria-label={`Solicitar información sobre ${title}`}><ArrowUpRight size={18} /></a></article>)}</div></div></section>
 
-      <section className="contact-section" id="contacto"><div><p className="eyebrow"><span className="eyebrow-line" /> Hablemos de su próximo proyecto</p><h2>Todo sistema<br />tiene un <em>pulso.</em></h2></div><a className="contact-link" href="mailto:contacto@afelectric.com">contacto@afelectric.com <ArrowUpRight size={20} /></a></section>
-      <footer><a href="#inicio" className="brand-mark"><span>A&F</span> ELECTRIC</a><p>Ingeniería eléctrica para un mundo en movimiento.</p><span>© 2026 A&F Electric</span></footer>
+      <section className="coverage-section content-shell"><div className="coverage-copy"><div className="section-kicker">Cobertura regional</div><h2>Una alianza técnica<br /><em>cerca de usted.</em></h2><p>Atendemos proyectos y requerimientos de empresas en Ecuador, Perú y Colombia con respuesta ágil y soporte especializado.</p></div><div className="coverage-map"><Globe2 size={54} /><div><strong>Ecuador</strong><strong>Perú</strong><strong>Colombia</strong></div></div></section>
+
+      <section className="contact-section" id="cotizacion"><div className="content-shell contact-inner"><div><div className="section-kicker">Hablemos de su proyecto</div><h2>Estamos listos para<br /><em>conectar.</em></h2></div><div className="contact-details"><p>Cuéntenos qué necesita y nuestro equipo técnico le ayudará a encontrar la solución adecuada.</p><a href="mailto:contacto@afelectric.com">contacto@afelectric.com <ArrowUpRight size={19} /></a></div></div></section>
+      <footer><div className="content-shell footer-inner"><a href="#inicio" className="logo-text"><strong>A&F</strong> ELECTRIC<small>SAS · Industrial & Tech</small></a><p>Equipamiento eléctrico · Soluciones industriales · Tecnología</p><span>© 2026 A&F Electric SAS</span></div></footer>
     </main>
   )
 }
-
