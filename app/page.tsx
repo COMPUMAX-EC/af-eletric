@@ -23,7 +23,7 @@ export default function Page() {
             <span className="logo-text"><strong>A&F</strong> ELECTRIC<small>SAS · Industrial & Tech</small></span>
           </a>
           <nav className="main-nav" aria-label="Navegación principal">
-            <a href="#inicio">Inicio</a><a href="#nosotros">Nosotros</a><a href="#productos">Productos</a><a href="#soluciones">Soluciones</a><a href="#contacto">Contacto</a>
+            <a href="#inicio">Inicio</a><a href="#nosotros">Nosotros</a><a href="#productos">Productos</a><a href="#soluciones">Soluciones</a><a href="#por-que-af">Empresa</a><a href="#contacto">Contacto</a>
           </nav>
           <a className="header-cta" href="#cotizacion"><FileSignature size={15} /> Solicitar cotización</a>
           <button className="mobile-menu" aria-label="Abrir menú"><Menu size={22} /></button>
@@ -35,7 +35,7 @@ export default function Page() {
         <div className="hero-overlay" />
         <div className="content-shell hero-content">
           <div className="hero-badge"><span /> Proveedor industrial y tecnológico</div>
-          <h1>Energía q<br /><em>impulsa tus proyectos.</em></h1>
+          <h1>Energía que<br /><em>impulsa tus proyectos.</em></h1>
           <p>Soluciones eléctricas, industriales y tecnológicas para empresas que buscan rendimiento, confiabilidad y eficiencia.</p>
           <div className="hero-actions"><a className="yellow-button" href="#productos"><Boxes size={17} /> Ver nuestros productos</a><a className="light-button" href="#cotizacion"><FileSignature size={17} /> Solicitar cotización</a></div>
           <div className="hero-note"><Zap size={17} /> Equipamiento eléctrico · Soluciones industriales · Tecnología</div>
