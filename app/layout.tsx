@@ -3,8 +3,9 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'A&F Electric | Ingeniería eléctrica especializada',
-  description: 'Sistemas eléctricos y adquisición de datos para buques e industria en Ecuador, Perú y Colombia.',
+  title: 'A&F ELECTRIC SAS | Equipos Eléctricos, Industriales y Tecnología',
+  description:
+    'A&F ELECTRIC SAS ofrece equipos eléctricos, industriales y tecnológicos, incluyendo motores, transformadores, bombas, cables, conmutadores, computadoras y equipos periféricos.',
   generator: 'v0.app',
   icons: {
     icon: [
